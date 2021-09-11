@@ -463,6 +463,23 @@ header span.close.active {
     width: 100%;
 }
 
+#work div.bottom.owl-carousel.owl-loaded.owl-drag div.owl-nav {
+    font-size: 50px;
+    font-family: "baloo_2regular";
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    bottom: 50%;
+    right: -20px;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    bottom: 50%;
+    left: -20px;
+}
+
 #experience {
 
 }
@@ -496,7 +513,7 @@ header span.close.active {
 }
 
 #experience div.right ul::before {
-    height: 95%;
+    height: 90%;
 }
 
 #experience div ul li {
