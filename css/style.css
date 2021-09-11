@@ -534,7 +534,7 @@ header span.close.active {
 }
 
 #experience div ul li {
-    padding: 0 0 30px;
+    margin: 0 0 30px;
     display: flex;
 }
 
