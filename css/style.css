@@ -11,6 +11,11 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+
 ol, ul {
 	list-style: none;
 }
@@ -54,7 +59,7 @@ a{
 
 p{
 	line-height:1.6em;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "baloo_2regular","balooregular", Arial;
 	color: #000;
 }
@@ -217,6 +222,10 @@ header div.right {
     cursor: pointer;
 }
 
+header div.right.active a {
+    color: #fff;
+}
+
 header div.right i.bx {
     font-size: 40px;
     margin-right: 5px;
@@ -226,7 +235,7 @@ header div.right a {
     font-size: 16px;
 }
 
-/* ------------------- */
+/* ---------( Hamburger button Responsive 640 and below )---------- */
 #menu-icon {
     display: none;
     width: 35px;
@@ -236,6 +245,10 @@ header div.right a {
     transition: all 0.4s ease-in;
 }
 
+#menu-icon.change {
+    filter: invert(1);
+}
+
 #menu-icon img {
     width: 100%;
     display: block;
@@ -243,7 +256,7 @@ header div.right a {
 
 #mobile-menu {
     position: fixed;
-    top: -220px;
+    top: -250px;
     left: 40%;
     text-align: center;
     background: #fff;
@@ -264,8 +277,8 @@ header div.right a {
 
 header span.close {
     position: fixed;
-    right: 30px;
-    top: 40px;
+    right: 40px;
+    top: 85px;
     width: 25px;
     height: 25px;
     display: block;
@@ -280,6 +293,11 @@ header span.close img {
     width: 100%;
     filter: invert(1);
 }
+
+header span.close.change {
+    filter: invert(1);
+}
+
 header span.close.active {
     display: block;
     transition: all 0.4s ease-in-out;
@@ -295,10 +313,10 @@ header span.close.active {
     font-size: 16px;
     font-weight: 600;
     font-family: "baloo_2regular";
-    color: #222;
+    color: #8f8f8f;
     display: block;
 }
-/* ---------------------------------- */
+/* ----------------( End )------------------ */
 
 #spotlight { 
     
@@ -375,7 +393,6 @@ header span.close.active {
         transition: 2s ease-in-out;
     }
 }
-
 
 #spotlight div.left div.top p {
     color: #818181;
@@ -726,7 +743,6 @@ header span.close.active {
     justify-content: space-between;
 }
 
-
 #message div.right form input {
     padding: 12px 16px;
     border: 1px solid #000;
@@ -738,9 +754,10 @@ header span.close.active {
 
 #message div.right form input.active {
     border: 1px solid #fff;
+    color: #fff;
 }
 
-#message div.right form input:hover {
+#message div.right form input:focus {
     border: 1px solid #f8c246;
     transition: 0.2s ease-in-out;
 }
@@ -782,15 +799,16 @@ header span.close.active {
 
 #message div.right form textarea.active {
     border: 1px solid #fff;
+    color: #fff;
 }
 
-#message div.right form textarea:hover {
+#message div.right form textarea:focus {
     border: 1px solid #f8c246;
     transition: 0.2s ease-in-out;
 }
 
 footer {
-    padding: 0 0 5%;
+    
 }
 
 footer section.wrapper {
@@ -893,14 +911,18 @@ footer p a:hover{
     header div.left {
         width: 100%;
     }
-    header div.right{
+    header div.right a{
         display: none;
+    }
+    header div.right i{
+        margin-left: 20px;
     }
     #spotlight div.left {
         width: 95%;
     }
     #spotlight div.right {
-        width: 100%;
+        width: 85%;
+        margin: 0 auto;
     }
     #spotlight div.left div.top p {
         font-size: 18px;
@@ -953,6 +975,10 @@ footer p a:hover{
     span.close {
         display: block;
     }
+    #mobile-menu.active {
+        background: none;
+    }
+
     #mobile-menu {
         display: block;
         transition: all 0.1s ease-in-out;
@@ -983,13 +1009,33 @@ footer p a:hover{
     #work div.top h3 {
         font-size: 28px;
     }
+    #work div.bottom.owl-carousel.owl-loaded.owl-drag div.owl-nav {
+        margin-top: 20px;
+    }
+    .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        bottom: 0px;
+        right: 42%;
+    }
+    .owl-carousel .owl-nav button.owl-prev {
+        position: absolute;
+        bottom: 0px;
+        left: 42%;
+    }
+    footer {
+        padding: 0;
+    }
 
 }
 
 @media all and (max-width: 480px){
+    header span.close {
+        right: 8%;
+    }
     #mobile-menu.active {
         top: 12%;
-        left: 35%;        
+        left: 35%;     
+        background: none;   
         transition: all 0.3s ease-in-out;
     }
     #mobile-menu {
@@ -1019,6 +1065,20 @@ footer p a:hover{
     }
     #experience div ul li div.content div.top {
         flex-direction: column;
+    }
+    #experience div ul li div.round {
+        height: 65px;
+        width: 65px;
+        padding: 20px 16px;
+    }
+    #experience div ul::before {
+        left: 32px;
+    }
+    #message div.left div.content {
+        padding: 20px;
+    }
+    #message div.right h3 {
+        font-size: 22px;
     }
 }
 

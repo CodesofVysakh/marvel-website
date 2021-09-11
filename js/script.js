@@ -1,10 +1,10 @@
 let mode = document.querySelector("header div.right");
 let mobile_menu = document.getElementById("mobile-menu");
 let spotlight = document.querySelector("#spotlight div.left");
-    
 let menu_icon = document.getElementById("menu-icon");
 let overlay = document.querySelector("#spotlight");
 let closebutton = document.querySelector(".close");
+
 
 menu_icon.addEventListener('click', () => {
     menu_icon.classList.toggle("active")
@@ -13,6 +13,7 @@ menu_icon.addEventListener('click', () => {
     closebutton.classList.toggle("active");
     spotlight.classList.toggle("active");
 });
+
 overlay.addEventListener('click', () => {
     menu_icon.classList.remove("active")
     mobile_menu.classList.remove("active");
@@ -20,6 +21,7 @@ overlay.addEventListener('click', () => {
     closebutton.classList.remove("active");
     spotlight.classList.toggle("active");
 });
+
 closebutton.addEventListener('click', () => {
     menu_icon.classList.toggle("active")
     mobile_menu.classList.toggle("active");
@@ -37,6 +39,9 @@ window.addEventListener("scroll", () =>{
 })
 
 mode.addEventListener("click", ()=>{
+    closebutton.classList.toggle("change");
+    menu_icon.classList.toggle("change");
+    mode.classList.toggle("active");
     document.querySelector("body").classList.toggle("active");
     document.querySelectorAll("#experience ul li div.content p").forEach(element => {
         element.classList.toggle("active");
@@ -45,9 +50,9 @@ mode.addEventListener("click", ()=>{
         element.classList.toggle("active");
     })
     if(document.querySelector("body").classList.contains("active")){
-        mode.innerHTML = `<i class='bx bx-sun'></i> Dark mode`;
+        mode.innerHTML = `<i class='bx bx-sun'></i> <a>Dark mode</a>`;
     }else{
-        mode.innerHTML = `<i class='bx bx-moon'></i> Color mode`;
+        mode.innerHTML = `<i class='bx bx-moon'></i> <a>Color mode</a>`;
     }
     document.querySelectorAll("#message div.right form input").forEach(element => {
         element.classList.toggle("active");
@@ -68,5 +73,4 @@ $(document).ready(function(){
         autoplayHoverPause: true,
         nav: true,
     });
-
-  });
+});
