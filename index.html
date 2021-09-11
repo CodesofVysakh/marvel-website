@@ -209,7 +209,7 @@
                 <div class="right">
                     <h3>Interested to work together? <br> Lets talk</h3>
                     <form action="">
-                        <input type="text" placeholder="Your Name" />
+                        <input type="text" placeholder="Your Name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" />
                         <input type="email" placeholder="Email" required />
                         <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         <input type="submit" value="Send Button" />
